@@ -31,34 +31,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     console.log(`Animating element ${index + 1}`);
                     element.style.opacity = 1;
                     element.style.transform = 'translateY(0)';
-                }, index * 500); // Задержка 100 мс между элементами
+                }, index * 0); // Задержка 100 мс между элементами
             });
         }, 1000); // Задержка 2.5 секунд
    1 }
 
-    // Функция для запуска анимации элементов меню
-    function startMenuAnimations() {
-        const menuElements = document.querySelectorAll('.menu_first_screen');
-
-        if (menuElements.length === 0) {
-            console.error("No elements with class 'menu_first_screen' found.");
-            return;
-        }
-
-        console.log("Menu animation will start in 2.5 seconds.");
-
-        setTimeout(() => {
-            console.log("Starting animation for menu elements.");
-            menuElements.forEach((element, index) => {
-                setTimeout(() => {
-                    console.log(`Animating menu element ${index + 1}`);
-                    element.style.opacity = 1;
-                    element.style.transform = 'translateY(0)';
-                }, index * 2500); // Задержка 100 мс между элементами
-            });
-        }, 1500); // Задержка 2.5 секунд
-    }
-
+    
     // Меню бургер
     const iconMenu = document.querySelector('.menu_icon');
     const menuBody = document.querySelector('.menu_body');
