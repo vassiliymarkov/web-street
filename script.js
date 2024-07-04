@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     console.log(`Animating element ${index + 1}`);
                     element.style.opacity = 1;
                     element.style.transform = 'translateY(0)';
-                }, index * 1); // Задержка 100 мс между элементами
+                }, index * 500); // Задержка 100 мс между элементами
             });
         }, 1000); // Задержка 2.5 секунд
    1 }
@@ -54,9 +54,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     console.log(`Animating menu element ${index + 1}`);
                     element.style.opacity = 1;
                     element.style.transform = 'translateY(0)';
-                }, index * 1); // Задержка 100 мс между элементами
+                }, index * 2500); // Задержка 100 мс между элементами
             });
-        }, 1000); // Задержка 2.5 секунд
+        }, 1500); // Задержка 2.5 секунд
     }
 
     // Меню бургер
