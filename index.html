@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Typing Effect Preloader</title>
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="header_container">
+      <header class="header">
+        <a href="index.html" id="typewriter"></a>
+        <menu>
+          <div class="menu_container element">
+            <div class="upper_menu menu">
+              <div class="menu_icon">
+                <span></span>
+              </div>
+              <nav class="menu_body">
+                <ul class="menu_list">
+                  <li><a href="#" class="menu_link">Services</a></li>
+                  <li><a href="#" class="menu_link">Portfolio</a></li>
+                  <li><a href="#" class="menu_link">Témoignages</a></li>
+                  <li><a href="#" class="menu_link">Contact</a></li>
+                  <li><a href="#" class="menu_link" id="wsj">Web Street Journal</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </menu>
+      </header>
+      <div class="subheader element">
+        <div class="social">
+          <a href="#" target="_blank" class="subheader_link"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" target="_blank" class="subheader_link"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" target="_blank" class="subheader_link"><i class="fa-brands fa-tiktok" id="last_social"></i></a>
+        </div>
+        <div class="langs">
+          <span><a href="#" class="subheader_link">EN</a></span>
+          <span><a href="#" class="subheader_link">RU</a></span>
+        </div>
+      </div>
+    </div>
+    <div class="main_photo element">
+      <img src="header.webp" id="main_photo" alt="">
+      <div class="overlay"></div>
+    </div>
+  </div>
+
+
+
+  <script src="https://kit.fontawesome.com/78197913c0.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+  <script src="script.js"></script>
+  <!-- <script type="text/javascript">
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const instance = new Typewriter('#typewriter', {
+        strings: 'Web Street',
+        autoStart: true,
+        cursor: '|',
+      });
+
+      const loaderTypewriter = new Typewriter('#logo_typewriter', {
+        strings: 'Web Street',
+        autoStart: true,
+        cursor: '|',
+      })
+      
+
+    });
+
+    // Меню бургер
+    const iconMenu = document.querySelector('.menu_icon');
+    const menuBody = document.querySelector('.menu_body');
+    if (iconMenu) {
+      iconMenu.addEventListener("click", function (e) {
+        document.body.classList.toggle('_lock');
+        iconMenu.classList.toggle('_active');
+        menuBody.classList.toggle('_active');
+      });
+    }
+
+    // Прокрутка при клике
+    const menuLinks = document.querySelectorAll('.menu_link');
+    if (menuLinks.length > 0) {
+      menuLinks.forEach(menuLink => {
+        menuLink.addEventListener("click", onMenuLinkClick);
+      });
+
+      function onMenuLinkClick(e) {
+        const menuLink = e.target;
+        if (menuLink && document.querySelector(menuLink)) {
+          const gotoBlock = document.querySelector(menuLink);
+
+          if (iconMenu.classList.contains('_active')) {
+            document.body.classList.remove('_lock');
+            iconMenu.classList.remove('_active');
+            menuBody.classList.remove('_active');
+          }
+
+          gotoBlock.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+          e.preventDefault();
+        }
+      }
+    }
+  </script> -->
+</body>
+
+</html>
