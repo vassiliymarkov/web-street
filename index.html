@@ -19,26 +19,26 @@
     <div class="header_container">
       <header class="header">
         <a href="index.html" id="typewriter"></a>
-        <menu>
-          <div class="menu_container element">
+        <div class="menu">
+          <div class="menu_container">
             <div class="upper_menu menu">
               <div class="menu_icon">
                 <span></span>
               </div>
               <nav class="menu_body">
                 <ul class="menu_list">
-                  <li><a href="#" class="menu_link">Services</a></li>
-                  <li><a href="#" class="menu_link">Portfolio</a></li>
-                  <li><a href="#" class="menu_link">Témoignages</a></li>
-                  <li><a href="#" class="menu_link">Contact</a></li>
-                  <li><a href="#" class="menu_link" id="wsj">Web Street Journal</a></li>
+                  <li><a href="#" class="menu_link first_screen">Services</a></li>
+                  <li><a href="#" class="menu_link first_screen">Portfolio</a></li>
+                  <li><a href="#" class="menu_link first_screen">Témoignages</a></li>
+                  <li><a href="#" class="menu_link first_screen">Contact</a></li>
+                  <li><a href="#" class="menu_link first_screen" id="wsj">Web Street Journal</a></li>
                 </ul>
               </nav>
             </div>
           </div>
-        </menu>
+        </div>
       </header>
-      <div class="subheader element">
+      <div class="subheader first_screen">
         <div class="social">
           <a href="#" target="_blank" class="subheader_link"><i class="fa-brands fa-facebook-f"></i></a>
           <a href="#" target="_blank" class="subheader_link"><i class="fa-brands fa-instagram"></i></a>
@@ -50,7 +50,7 @@
         </div>
       </div>
     </div>
-    <div class="main_photo element">
+    <div class="main_photo first_screen">
       <img src="header.webp" id="main_photo" alt="">
       <div class="overlay"></div>
     </div>
@@ -61,62 +61,10 @@
   <script src="https://kit.fontawesome.com/78197913c0.js" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
   <script src="script.js"></script>
-  <!-- <script type="text/javascript">
+  <script type="text/javascript">
 
-    document.addEventListener('DOMContentLoaded', function () {
-      const instance = new Typewriter('#typewriter', {
-        strings: 'Web Street',
-        autoStart: true,
-        cursor: '|',
-      });
 
-      const loaderTypewriter = new Typewriter('#logo_typewriter', {
-        strings: 'Web Street',
-        autoStart: true,
-        cursor: '|',
-      })
-      
-
-    });
-
-    // Меню бургер
-    const iconMenu = document.querySelector('.menu_icon');
-    const menuBody = document.querySelector('.menu_body');
-    if (iconMenu) {
-      iconMenu.addEventListener("click", function (e) {
-        document.body.classList.toggle('_lock');
-        iconMenu.classList.toggle('_active');
-        menuBody.classList.toggle('_active');
-      });
-    }
-
-    // Прокрутка при клике
-    const menuLinks = document.querySelectorAll('.menu_link');
-    if (menuLinks.length > 0) {
-      menuLinks.forEach(menuLink => {
-        menuLink.addEventListener("click", onMenuLinkClick);
-      });
-
-      function onMenuLinkClick(e) {
-        const menuLink = e.target;
-        if (menuLink && document.querySelector(menuLink)) {
-          const gotoBlock = document.querySelector(menuLink);
-
-          if (iconMenu.classList.contains('_active')) {
-            document.body.classList.remove('_lock');
-            iconMenu.classList.remove('_active');
-            menuBody.classList.remove('_active');
-          }
-
-          gotoBlock.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-          });
-          e.preventDefault();
-        }
-      }
-    }
-  </script> -->
+  </script>
 </body>
 
 </html>

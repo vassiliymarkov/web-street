@@ -1,21 +1,3 @@
-"use strict"
-
-document.addEventListener("DOMContentLoaded", () => {
-    const triggerElement = document.getElementById('typewriter');
-    const elements = document.querySelectorAll('.element');
-    
-    // Включаем анимацию для элементов через 2 секунды после загрузки triggerElement
-    setTimeout(() => {
-        elements.forEach((element, index) => {
-            setTimeout(() => {
-                element.style.opacity = 1;
-                element.style.transform = 'translateY(0)';
-            }, index * 100); // Задержка 500 мс между элементами
-        });
-    }, 2500); // Задержка 2000 мс (2 секунды)
-});
-
-
 document.addEventListener('DOMContentLoaded', function () {
     // Typewriter для логотипа
     const logoTypewriter = new Typewriter('#typewriter', {
@@ -25,13 +7,63 @@ document.addEventListener('DOMContentLoaded', function () {
 
     logoTypewriter
         .typeString('Web Street')
+        .callFunction(() => {
+            console.log('Typewriter animation completed.');
+            startFirstScreenAnimations();
+        })
         .start();
-});
+
+    // Функция для запуска анимации элементов первого экрана
+    function startFirstScreenAnimations() {
+        const elements = document.querySelectorAll('.first_screen');
+
+        if (elements.length === 0) {
+            console.error("No elements with class 'first_screen' found.");
+            return;
+        }
+
+        console.log("Animation will start in 2.5 seconds.");
+
+        setTimeout(() => {
+            console.log("Starting animation for elements.");
+            elements.forEach((element, index) => {
+                setTimeout(() => {
+                    console.log(`Animating element ${index + 1}`);
+                    element.style.opacity = 1;
+                    element.style.transform = 'translateY(0)';
+                }, index * 1); // Задержка 100 мс между элементами
+            });
+        }, 1000); // Задержка 2.5 секунд
+   1 }
+
+    // Функция для запуска анимации элементов меню
+    function startMenuAnimations() {
+        const menuElements = document.querySelectorAll('.menu_first_screen');
+
+        if (menuElements.length === 0) {
+            console.error("No elements with class 'menu_first_screen' found.");
+            return;
+        }
+
+        console.log("Menu animation will start in 2.5 seconds.");
+
+        setTimeout(() => {
+            console.log("Starting animation for menu elements.");
+            menuElements.forEach((element, index) => {
+                setTimeout(() => {
+                    console.log(`Animating menu element ${index + 1}`);
+                    element.style.opacity = 1;
+                    element.style.transform = 'translateY(0)';
+                }, index * 1); // Задержка 100 мс между элементами
+            });
+        }, 1000); // Задержка 2.5 секунд
+    }
+
     // Меню бургер
     const iconMenu = document.querySelector('.menu_icon');
     const menuBody = document.querySelector('.menu_body');
     if (iconMenu) {
-        iconMenu.addEventListener("click", function (e) {
+        iconMenu.addEventListener("click", function () {
             document.body.classList.toggle('_lock');
             iconMenu.classList.toggle('_active');
             menuBody.classList.toggle('_active');
@@ -47,20 +79,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
         function onMenuLinkClick(e) {
             const menuLink = e.target;
-            if (menuLink && document.querySelector(menuLink)) {
-                const gotoBlock = document.querySelector(menuLink);
+            if (menuLink.hash) {
+                const gotoBlock = document.querySelector(menuLink.hash);
 
-                if (iconMenu.classList.contains('_active')) {
-                    document.body.classList.remove('_lock');
-                    iconMenu.classList.remove('_active');
-                    menuBody.classList.remove('_active');
+                if (gotoBlock) {
+                    if (iconMenu.classList.contains('_active')) {
+                        document.body.classList.remove('_lock');
+                        iconMenu.classList.remove('_active');
+                        menuBody.classList.remove('_active');
+                    }
+
+                    gotoBlock.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+                    e.preventDefault();
                 }
-
-                gotoBlock.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
-                e.preventDefault();
             }
         }
     }
+});
