@@ -51,8 +51,8 @@
       </div>
     </div>
     <div class="main_photo first_screen">
-      <img src="header.webp" id="main_photo" alt="">
-      <div class="overlay"></div>
+      <img src="header_big.webp" id="main_photo" alt="">
+      <!--  <div class="overlay"></div> -->
     </div>
   </div>
 
@@ -62,8 +62,26 @@
   <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
   <script src="script.js"></script>
   <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', () => {
+      const mainPhoto = document.querySelector('.main_photo');
+      const header = document.querySelector('.header');
 
+      // Получение вычисленного значения margin-top
+      const computedStyle = getComputedStyle(mainPhoto);
+      const marginTop = parseFloat(computedStyle.marginTop);
 
+      // Высота окна браузера
+      const viewportHeight = window.innerHeight;
+
+      // Высота хедера
+      const headerHeight = header.offsetHeight;
+
+      // Расчет высоты main_photo
+      const newHeight = viewportHeight - headerHeight - marginTop;
+
+      // Установка новой высоты main_photo
+      mainPhoto.style.height = `${newHeight}px`;
+    });
   </script>
 </body>
 

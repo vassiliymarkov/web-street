@@ -87,7 +87,7 @@ img {
 	justify-content: space-between;
 	align-items: center;
 	width: 100%;
-	height: auto;
+	height: calc(30px + (50 - 30) * ((100vw - 320px) / (2560 - 320)));
 }
 
 .header {
@@ -97,7 +97,7 @@ img {
 	justify-content: space-between;
 	align-items: center;
 	width: 100%;
-	height: auto;
+	height: 100%;
 }
 
 #typewriter,
@@ -197,10 +197,6 @@ img {
 .menu_link:hover {
 	opacity: 0.8;
 }
-
-/* .menu_link {
-		font-size: 23px;
-	} */
 
 #wsj {
 	color: #199e1f;
@@ -370,16 +366,15 @@ body._touch .menu_list>li._active {
 /*** END OF MENU ***/
 
 .main_photo {
-	position: relative;
+	/* position: relative; */
 	max-width: 100%;
-	height: auto;
-	margin-top: calc(20px + (50 - 20) * ((100vw - 320px) / (2560 - 320)));
+	margin-top: calc(50px + (70 - 50) * ((100vw - 320px) / (2560 - 320)));
 }
 
-#main_photo {
+.main_photo img {
 	width: 100%;
-	height: auto;
-	display: block;
+	height: 100%;
+	object-fit: cover;
 }
 
 .overlay {
