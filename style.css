@@ -378,10 +378,11 @@ body._touch .menu_list>li._active {
 }
 #first_text {
 	position: absolute;
-	top: 50%;
-	left: 30%;
-	font-size: 32px;
+	top: 40%;
+	left: 15%;
+	font-size: 40px;
 	color: #fff;
+	z-index: 10;
 }
 .overlay {
 	position: absolute;
