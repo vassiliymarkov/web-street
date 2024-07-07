@@ -31,9 +31,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     console.log(`Animating element ${index + 1}`);
                     element.style.opacity = 1;
                     element.style.transform = 'translateY(0)';
-                }, index * 300); // Задержка 100 мс между элементами
+                }, index * 150); // Задержка 100 мс между элементами
             });
-        }, 1000); // Задержка 2.5 секунд
+        }, 500); // Задержка 2.5 секунд
    1 }
 
     
