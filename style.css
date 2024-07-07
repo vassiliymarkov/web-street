@@ -376,7 +376,13 @@ body._touch .menu_list>li._active {
 	height: 100%;
 	object-fit: cover;
 }
-
+#first_text {
+	position: absolute;
+	top: 50%;
+	left: 30%;
+	font-size: 32px;
+	color: #fff;
+}
 .overlay {
 	position: absolute;
 	top: 0;
